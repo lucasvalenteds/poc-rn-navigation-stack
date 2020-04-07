@@ -43,9 +43,15 @@
   "jest": {
     "preset": "react-native",
     "collectCoverage": true,
+    "setupFiles": [
+        "./node_modules/react-native-gesture-handler/jestSetup.js"
+    ],
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
-    }
+    },
+    "moduleNameMapper": {
+    "\\.(jpg|png)$": "<rootDir>/src/__mocks__/image.js"
+  }
   },
   "babel": {
     "presets": [
